@@ -76,8 +76,8 @@ public class BrowserStackImpl implements IDriver{
 	String username = System.getenv("BROWSERSTACK_USERNAME");
 	String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
 	String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
-	String appID = System.getenv("BROWSERSTACK_APP_ID");
-	
+	//String appID = System.getenv("BROWSERSTACK_APP_ID");
+	String appID = "bs://425b95f0776e8a0d56d2e0596fae129b652f8d55";
 	caps.setCapability("browserstack.user",username );
 	caps.setCapability("browserstack.key",accessKey );
 
