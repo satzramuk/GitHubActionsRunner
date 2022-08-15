@@ -24,7 +24,7 @@ jobs:
         cache: maven
     - name: Build with Maven
       env: # Or as an environment variable
-       BROWSERSTACK_USER: ${{ secrets.BROWSERSTACK_USER }}
-       BROWSERSTACK_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
-       BROWSERSTACK_BUILD_NAME: ${GITHUB_REF#refs/heads/}
-      run: mvn clean test -DsuiteXmlFile=testng.xml
+        BROWSERSTACK_USER: ${{ secrets.BROWSERSTACK_USER }}
+        BROWSERSTACK_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+        BROWSERSTACK_BUILD_NAME: ${GITHUB_REF#refs/heads/}
+      run: mvn clean -DBROWSERSTACK_BUILD_NAME=${GITHUB_REF#refs/heads/} test -DsuiteXmlFile=testng.xml
